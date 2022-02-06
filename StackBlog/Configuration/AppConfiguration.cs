@@ -8,27 +8,27 @@ namespace StackBlog.Configuration
 {
 	public static class AppConfiguration
 	{
-		public static void AddDefaultConfiguration(this IApplicationBuilder app, IWebHostEnvironment env) {
-			if (env.IsDevelopment())
+		public static void AddDefaultConfiguration(this IApplicationBuilder applicationBuilder, IWebHostEnvironment webHostEnvironment) {
+			if (webHostEnvironment.IsDevelopment())
 			{
-				app.UseDeveloperExceptionPage();
-				app.UseDatabaseErrorPage();
+				applicationBuilder.UseDeveloperExceptionPage();
+				applicationBuilder.UseDatabaseErrorPage();
 			}
 			else
 			{
-				app.UseExceptionHandler("/Home/Error");
+				applicationBuilder.UseExceptionHandler("/Home/Error");
 				// The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-				app.UseHsts();
+				applicationBuilder.UseHsts();
 			}
-			app.UseHttpsRedirection();
-			app.UseStaticFiles();
+			applicationBuilder.UseHttpsRedirection();
+			applicationBuilder.UseStaticFiles();
 
-			app.UseRouting();
+			applicationBuilder.UseRouting();
 
-			app.UseAuthentication();
-			app.UseAuthorization();
+			applicationBuilder.UseAuthentication();
+			applicationBuilder.UseAuthorization();
 
-			app.UseEndpoints(endpoints =>
+			applicationBuilder.UseEndpoints(endpoints =>
 			{
 				endpoints.MapControllerRoute(
 					name: "default",
