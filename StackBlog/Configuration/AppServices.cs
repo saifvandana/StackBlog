@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using StackBlog.Data;
+using StackBlog.Data.Models;
 
 namespace StackBlog.Configuration
 {
@@ -17,9 +18,9 @@ namespace StackBlog.Configuration
 			serviceCollection.AddDbContext<ApplicationDbContext>(options =>
 				options.UseSqlServer(
 					configuration.GetConnectionString("DefaultConnection")));
-			serviceCollection.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+			serviceCollection.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
 				.AddEntityFrameworkStores<ApplicationDbContext>();
-			serviceCollection.AddControllersWithViews();
+			serviceCollection.AddControllersWithViews().AddRazorRuntimeCompilation();
 			serviceCollection.AddRazorPages();
 		}
 	}
