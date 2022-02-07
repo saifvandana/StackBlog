@@ -1,11 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
 namespace StackBlog.ViewComponents
 {
-	public class HeaderViewComponent
-	{
-	}
+    public class HeaderViewComponent : ViewComponent
+    {
+        public async Task<IViewComponentResult> InvokeAsync()
+        {
+            return await Task.Factory.StartNew(() => { return View(); });
+        }
+    }
 }
