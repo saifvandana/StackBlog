@@ -15,11 +15,14 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.Graph" Version="4.17.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
+    <PackageReference Include="PagedList" Version="1.17.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\StackBlog.Data\StackBlog.Data.csproj" />
+    <ProjectReference Include="..\StackBlog.Service\StackBlog.Service.csproj" />
   </ItemGroup>
 
 </Project>

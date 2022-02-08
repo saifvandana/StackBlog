@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace StackBlog.Controllers
 {
-    [Authorize]
     public class PostController : Controller
     {
 
