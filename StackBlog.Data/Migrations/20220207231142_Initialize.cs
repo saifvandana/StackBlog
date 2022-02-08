@@ -42,7 +42,7 @@ namespace StackBlog.Data.Migrations
                     AccessFailedCount = table.Column<int>(nullable: false),
                     FirstName = table.Column<string>(nullable: true),
                     LastName = table.Column<string>(nullable: true),
-                    SubHeader = table.Column<string>(nullable: true),
+                    Header = table.Column<string>(nullable: true),
                     AboutContent = table.Column<string>(nullable: true)
                 },
                 constraints: table =>

@@ -10,6 +10,7 @@ namespace StackBlog.Data.Models
         public string LastName { get; set; }
 
         public string SubHeader { get; set; }
+
         public string AboutContent { get; set; }
     }
 }
